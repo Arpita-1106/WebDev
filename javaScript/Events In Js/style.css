@@ -1,0 +1,21 @@
+
+.child{
+    background-color: skyblue;
+    margin: 14px;
+    padding: 14px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.childcontainer{
+    background-color: rgb(24, 121, 159);
+    margin: 14px;
+    padding: 14px;
+    border: 2px solid black;
+}
+.container{
+    background-color: rgb(25, 80, 101);
+    margin: 14px;
+    padding: 14px;
+    border: 2px solid black;
+}
