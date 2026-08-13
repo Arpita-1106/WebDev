@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventBubbling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <section class="childcontainer">
+        <div class="child">
+            I am a child.
+        </div>
+    </section>
+ </div>
+
+ <script>
+    document.querySelector(".child").addEventListener("click" , (e) =>{
+     e.stopPropagation();  // to stop bubbling , now it will only do for child.
+    alert("Child was clicked")
+})
+    document.querySelector(".childcontainer").addEventListener("click" , () =>{
+    alert("ChildContainer was clicked")
+})
+    document.querySelector(".container").addEventListener("click" , () =>{
+    alert("container was clicked")
+})
+function getRandomColor() {
+    let val1 = Math.ceil(0 + Math.random()* 255);
+    let val2 = Math.ceil(0 + Math.random()* 255);
+    let val3 = Math.ceil(0 + Math.random()* 255);
+    return `rgb(${val1}, ${val2}, ${val3})`
+}
+
+// let a = setInterval(() => { // change color more than one time until mark it clear
+//     document.querySelector(".childcontainer").style.backgroundColor = getRandomColor();
+// }, 1000);
+// console.log(a);
+
+let b = setTimeout(() => {  //change color one time
+    document.querySelector(".childcontainer").style.backgroundColor = getRandomColor();
+}, 5000);
+console.log(b);
+ </script>
+</body>
+</html>
